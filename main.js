@@ -23,7 +23,7 @@ $(document).ready(function(){
 			dataPoints: [
 				{y: 72, indexLabel: "HTML5", color: "#E44D26", name: "HTML"},
 				{y: 72, indexLabel: "CSS3", color: "#3C99DC", name: "CSS"},
-				{y: 72, indexLabel: "MongoDB", color: "#589636", name: "MongoDB"},
+				{y: 72, indexLabel: "PHP", color: "#589636", name: "PHP"},
 				{y: 72, indexLabel: "JS", color: "#F0DB4F", name: "Javascript"},
 				{y: 72, indexLabel: "JQuery", color: "#B0B3D6", name: "JQuery"},
 				{y: 72, indexLabel: "Node.js", color: "#68A063", name: "Node.js"}
@@ -83,36 +83,17 @@ $(document).ready(function(){
 		$('.nav-waypoint').addClass('sticky-top');
 	});
 
+	//***************************
+	// Modals
+	//*************************** 
+	$('#dicModal').on('shown.bs.modal', function () {
+		$('#myInput').trigger('focus')
+	  })
 
 	//***************************
 	// Contact Form
 	//***************************
 
-	document.getElementById('status').innerHTML = "Sending...";
-	formData = {
-	'name'     : $('input[name=name]').val(),
-	'email'    : $('input[name=email]').val(),
-	'subject'  : $('input[name=subject]').val(),
-	'message'  : $('textarea[name=message]').val()
-	};
-
-
-	$.ajax({
-		url : "mail.php",
-		type: "POST",
-		data : formData,
-		success: function(data, textStatus, jqXHR)
-		{
-
-			$('#status').text(data.message);
-			if (data.code) //If mail was sent successfully, reset the form.
-			$('#contact-form').closest('form').find("input[type=text], textarea").val("");
-		},
-		error: function (jqXHR, textStatus, errorThrown)
-		{
-			$('#status').text(jqXHR);
-		}
-	});
 
 });
 
@@ -151,6 +132,32 @@ function validateForm() {
       return false;
   }
   document.querySelector('.status').innerHTML = "Sending...";
+  document.getElementById('status').innerHTML = "Sending...";
+  formData = {
+  'name'     : $('input[name=name]').val(),
+  'email'    : $('input[name=email]').val(),
+  'subject'  : $('input[name=subject]').val(),
+  'message'  : $('textarea[name=message]').val()
+  };
+
+
+  $.ajax({
+	  url : "mail.php",
+	  type: "POST",
+	  data : formData,
+	  success: function(data, textStatus, jqXHR)
+	  {
+
+		  $('#status').text(data.message);
+		  if (data.code) //If mail was sent successfully, reset the form.
+		  $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+	  },
+	  error: function (jqXHR, textStatus, errorThrown)
+	  {
+		  $('#status').text(jqXHR);
+	  }
+  });
+
 }
 
 

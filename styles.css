@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
 body {
 	
 	height: 100%;
@@ -186,6 +188,79 @@ body {
 .card-title {
 	color: #B56366;
 	font-weight: bold;
+}
+
+
+/* ------------------------------------------*/
+/* Modals */
+/* ------------------------------------------*/
+
+.modal-dialog {
+	max-width: 100%;
+	padding: 20px;
+}
+
+.tech-list{
+	padding: 10px;
+	font-family: 'Share Tech', sans-serif;
+	font-style: italic;
+
+}
+
+.modal-body {
+	padding: 0;
+}
+
+.about-site{
+	padding:40px 20px 20px 20px;
+	justify-content: center;
+}
+
+.about-site span{
+	text-align: center;
+	font-weight: 700;
+	text-decoration: underline;
+	font-size: large;
+}
+.modal-content{
+	border-radius: 4px;
+	box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+	transition: .3s transform cubic-bezier(.155,1.105,.295,1.2), .3s box-shadow, .3s;
+	cursor: pointer;
+	margin: auto;
+	max-width: 90%;
+	background: rgb(157,165,171);
+	background: linear-gradient(175deg, rgb(190, 194, 197) 0%, rgba(236,236,236,1) 100%);
+}
+
+.modal-content p{
+	padding: 10px;
+}
+.carousel-control-prev {
+	outline:none !important;
+	border-style: none;
+	height: 10%;
+	margin-top:35%;
+	border-radius: 90px;
+	width: 8%;
+}
+
+.carousel-control-next {
+	outline:none !important;
+	border-style: none;
+	height: 10%;
+	margin-top:35%;
+	border-radius: 90px;
+	width: 8%;
+}
+
+.siteTitle{
+	font-weight: 700;
+	font-size: large;
+}
+.stackList li{
+	padding-top:5px;
+	
 }
 
 /* ------------------------------------------*/
